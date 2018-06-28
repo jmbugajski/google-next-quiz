@@ -8,8 +8,7 @@ view: next_events {
 
   dimension_group: answer_submit_date {
     type: time
-    datatype: epoch
-    sql: ${TABLE}.answerSubmitDate / 1000 ;;
+    sql: TIMESTAMP_MILLIS(${TABLE}.answerSubmitDate) ;;
   }
 
   dimension: is_answer_correct {
@@ -19,8 +18,7 @@ view: next_events {
 
   dimension_group: page_created_date {
     type: time
-    datatype: epoch
-    sql: ${TABLE}.pageCreatedDate / 1000 ;;
+    sql: TIMESTAMP_MILLIS(${TABLE}.pageCreatedDate) ;;
   }
 
   dimension: question_id {
@@ -40,8 +38,7 @@ view: next_events {
 
   dimension_group: question_date_added {
     type: time
-    datatype: epoch
-    sql: ${TABLE}.question.dateAdded / 1000 ;;
+    sql: TIMESTAMP_MILLIS(${TABLE}.question.dateAdded) ;;
   }
 
   dimension: question_difficulty {
