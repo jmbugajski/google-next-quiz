@@ -1,4 +1,4 @@
-view: next_events {
+view: quiz_events {
   sql_table_name: bruce.next_events ;;
 
   dimension: user_id {
