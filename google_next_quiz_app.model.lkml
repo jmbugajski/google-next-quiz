@@ -10,4 +10,3 @@ datagroup: google_next_quiz_app_default_datagroup {
 persist_with: google_next_quiz_app_default_datagroup
 
 explore: next_events {}
-explore: questions {}
