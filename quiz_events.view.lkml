@@ -1,5 +1,5 @@
 view: quiz_events {
-  sql_table_name: bruce.next_events ;;
+  sql_table_name: mdp-next18.raw.events ;;
 
   dimension: user_id {
     type: string
@@ -45,6 +45,7 @@ view: quiz_events {
 }
 
 view: quiz_events__question {
+  sql_table_name: mdp-next18.raw.events ;;
 
   dimension: type {
     type: string
