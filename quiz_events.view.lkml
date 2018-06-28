@@ -44,8 +44,8 @@ view: quiz_events {
   }
 
   measure: count_percent {
-  type: percent_of_total
-  sql: ${count}
+    type: percent_of_total
+    sql: ${count} ;;
   }
 
   measure: user_count {
