@@ -6,79 +6,75 @@ view: quiz_events {
     sql: ${TABLE}.userId ;;
   }
 
-  dimension: question {
-    group_label: "Questions"
-    type: string
-    hidden:  yes
-    sql: ${TABLE}.question ;;
-  }
-
-  dimension: question_type {
-    group_label: "Questions"
-    type: string
-    sql: ${TABLE}.question.type ;;
-  }
-
-  dimension: question_question_id {
-    group_label: "Questions"
-    type: number
-    sql: ${TABLE}.question.questionId ;;
-  }
-
-  dimension: question_question {
-    group_label: "Questions"
-    type: string
-    sql: ${TABLE}.question.question ;;
-  }
-
-  dimension: question_difficulty {
-    group_label: "Questions"
-    type: number
-    sql: ${TABLE}.question.difficulty ;;
-  }
-
-  dimension_group: question_added {
+  dimension_group: page_created_date {
     type: time
-    sql: TIMESTAMP_MILLIS(${TABLE}.question.dateAdded) ;;
-  }
-
-  dimension: question_choices {
-    group_label: "Questions"
-    type: string
-    sql: ${TABLE}.question.choices ;;
-  }
-
-  dimension_group: page_created {
-    type: time
+    timeframes: [time, date, week, month, day_of_week, hour_of_day]
     sql: TIMESTAMP_MILLIS(${TABLE}.pageCreatedDate) ;;
   }
 
   dimension: is_answer_correct {
-    group_label: "Answers"
     type: yesno
     sql: ${TABLE}.isAnswerCorrect ;;
   }
 
-  dimension: answered_question_id {
-    group_label:  "Answers"
+  dimension: question_id {
     type: number
     sql: ${TABLE}.questionId ;;
   }
 
-  dimension_group: answer_submitted {
+  dimension_group: answer_submit_date {
     type: time
+    timeframes: [time, date, week, month, day_of_week, hour_of_day]
     sql: TIMESTAMP_MILLIS(${TABLE}.answerSubmitDate) ;;
   }
 
   dimension: answer {
-    group_label: "Answers"
     type: string
     sql: ${TABLE}.answer ;;
+  }
+
+  dimension: question {
+    hidden: yes
+    sql: ${TABLE}.question ;;
   }
 
   measure: count {
     type: count
     drill_fields: []
+  }
+}
+
+view: quiz_events__question {
+
+  dimension: type {
+    type: string
+    sql: ${TABLE}.type ;;
+  }
+
+  dimension: question_id {
+    type: number
+    sql: ${TABLE}.questionId ;;
+  }
+
+  dimension: question {
+    type: string
+    sql: ${TABLE}.question ;;
+  }
+
+  dimension: difficulty {
+    type: number
+    sql: ${TABLE}.difficulty ;;
+  }
+
+  dimension_group: date_added {
+    type: time
+    timeframes: [time, date, week, month, day_of_week, hour_of_day]
+    sql: TIMESTAMP_MILLIS(${TABLE}.dateAdded) ;;
+  }
+
+  dimension: choices {
+    type: string
+    sql: ${TABLE}.choices ;;
   }
 
 }
