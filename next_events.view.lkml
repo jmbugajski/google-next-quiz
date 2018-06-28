@@ -6,7 +6,7 @@ view: next_events {
     sql: ${TABLE}.answer ;;
   }
 
-  dimension_group: answer_submit_date {
+  dimension_group: answer_submit {
     type: time
     sql: TIMESTAMP_MILLIS(${TABLE}.answerSubmitDate) ;;
   }
@@ -16,7 +16,7 @@ view: next_events {
     sql: ${TABLE}.isAnswerCorrect ;;
   }
 
-  dimension_group: page_created_date {
+  dimension_group: page_created {
     type: time
     sql: TIMESTAMP_MILLIS(${TABLE}.pageCreatedDate) ;;
   }
@@ -36,7 +36,7 @@ view: next_events {
     sql: ${TABLE}.question.choices ;;
   }
 
-  dimension_group: question_date_added {
+  dimension_group: question_added {
     type: time
     sql: TIMESTAMP_MILLIS(${TABLE}.question.dateAdded) ;;
   }
