@@ -43,6 +43,11 @@ view: quiz_events {
     drill_fields: []
   }
 
+  measure: count_percent {
+  type: percent_of_total
+  sql: ${count}
+  }
+
   measure: user_count {
     type:  count_distinct
     sql:  ${TABLE}.userId ;;
