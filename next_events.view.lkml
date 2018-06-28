@@ -21,11 +21,6 @@ view: next_events {
     sql: ${TABLE}.pageCreatedDate ;;
   }
 
-  dimension: question {
-    type: string
-    sql: ${TABLE}.question ;;
-  }
-
   dimension: question_id {
     type: number
     sql: ${TABLE}.questionId ;;
@@ -36,42 +31,34 @@ view: next_events {
     sql: ${TABLE}.userId ;;
   }
 
-  measure: count {
-    type: count
-    drill_fields: []
-  }
-}
-
-view: questions {
-  sql_table_name: bruce.next_events ;;
-
-  dimension: choices {
+  dimension: question_choices {
     type: string
-    sql: ${TABLE}.choices ;;
+    sql: ${TABLE}.question.choices ;;
   }
 
-  dimension: date_added {
+  dimension: question_date_added {
     type: number
-    sql: ${TABLE}.dateAdded ;;
+    sql: ${TABLE}.question.dateAdded ;;
   }
 
-  dimension: difficulty {
+  dimension: question_difficulty {
     type: number
-    sql: ${TABLE}.difficulty ;;
+    sql: ${TABLE}.question.difficulty ;;
   }
 
   dimension: question {
     type: string
-    sql: ${TABLE}.question ;;
+    sql: ${TABLE}.question.question ;;
   }
 
-  dimension: question_id {
-    type: number
-    sql: ${TABLE}.questionId ;;
-  }
-
-  dimension: type {
+  dimension: question_type {
     type: string
-    sql: ${TABLE}.type ;;
+    sql: ${TABLE}.question.type ;;
   }
+
+  measure: count {
+    type: count
+    drill_fields: []
+  }
+
 }
