@@ -6,8 +6,9 @@ view: next_events {
     sql: ${TABLE}.answer ;;
   }
 
-  dimension: answer_submit_date {
-    type: number
+  dimension_group: answer_submit_date {
+    type: time
+    timeframes: [time, date, week, month, day_of_week, hour_of_day]
     sql: ${TABLE}.answerSubmitDate ;;
   }
 
@@ -16,8 +17,9 @@ view: next_events {
     sql: ${TABLE}.isAnswerCorrect ;;
   }
 
-  dimension: page_created_date {
-    type: number
+  dimension_group: page_created_date {
+    type: time
+    timeframes: [time, date, week, month, day_of_week, hour_of_day]
     sql: ${TABLE}.pageCreatedDate ;;
   }
 
@@ -43,13 +45,15 @@ view: next_events {
 }
 
 view: next_events__question {
+
   dimension: choices {
     type: string
     sql: ${TABLE}.choices ;;
   }
 
-  dimension: date_added {
-    type: number
+  dimension_group: date_added {
+    type: time
+    timeframes: [time, date, week, month, day_of_week, hour_of_day]
     sql: ${TABLE}.dateAdded ;;
   }
 
