@@ -42,6 +42,11 @@ view: quiz_events {
     type: count
     drill_fields: []
   }
+
+  measure: user_count {
+    type:  count_distinct
+    sql:  ${TABLE}.userId ;;
+  }
 }
 
 view: quiz_events__question {
