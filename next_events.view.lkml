@@ -38,7 +38,6 @@ view: next_events {
   }
 
   dimension_group: question_added {
-    group_label: "Questions"
     type: time
     sql: TIMESTAMP_MILLIS(${TABLE}.question.dateAdded) ;;
   }
@@ -67,7 +66,6 @@ view: next_events {
   }
 
   dimension_group: answer_submitted {
-    group_label: "Answers"
     type: time
     sql: TIMESTAMP_MILLIS(${TABLE}.answerSubmitDate) ;;
   }
