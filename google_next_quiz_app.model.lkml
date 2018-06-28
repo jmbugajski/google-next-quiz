@@ -9,4 +9,11 @@ datagroup: google_next_quiz_app_default_datagroup {
 
 persist_with: google_next_quiz_app_default_datagroup
 
-explore: quiz_events {}
+explore: quiz_events {
+  # Repeated nested Object
+  join: quiz_events__question {
+    view_label:  "Quiz Events: Questions"
+    sql:  LEFT JOIN UNNEST(${quiz_events__question.choices}) as question_choices ;;
+    relationship:  one_to_many
+  }
+}
