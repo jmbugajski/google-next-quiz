@@ -7,37 +7,44 @@ view: next_events {
   }
 
   dimension: question {
+    group_label: "Questions"
     type: string
     hidden:  yes
     sql: ${TABLE}.question ;;
   }
 
   dimension: question_type {
+    group_label: "Questions"
     type: string
     sql: ${TABLE}.question.type ;;
   }
 
   dimension: question_question_id {
-    type: string
+    group_label: "Questions"
+    type: number
     sql: ${TABLE}.question.questionId ;;
   }
 
   dimension: question_question {
+    group_label: "Questions"
     type: string
     sql: ${TABLE}.question.question ;;
   }
 
   dimension: question_difficulty {
+    group_label: "Questions"
     type: number
     sql: ${TABLE}.question.difficulty ;;
   }
 
   dimension_group: question_added {
+    group_label: "Questions"
     type: time
     sql: TIMESTAMP_MILLIS(${TABLE}.question.dateAdded) ;;
   }
 
   dimension: question_choices {
+    group_label: "Questions"
     type: string
     sql: ${TABLE}.question.choices ;;
   }
@@ -48,21 +55,25 @@ view: next_events {
   }
 
   dimension: is_answer_correct {
+    group_label: "Answers"
     type: yesno
     sql: ${TABLE}.isAnswerCorrect ;;
   }
 
-  dimension: question_id {
+  dimension: answered_question_id {
+    group_label:  "Answers"
     type: number
     sql: ${TABLE}.questionId ;;
   }
 
-  dimension_group: answer_submit {
+  dimension_group: answer_submitted {
+    group_label: "Answers"
     type: time
     sql: TIMESTAMP_MILLIS(${TABLE}.answerSubmitDate) ;;
   }
 
   dimension: answer {
+    group_label: "Answers"
     type: string
     sql: ${TABLE}.answer ;;
   }
