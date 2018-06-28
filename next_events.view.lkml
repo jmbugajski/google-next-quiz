@@ -6,8 +6,9 @@ view: next_events {
     sql: ${TABLE}.answer ;;
   }
 
-  dimension_group: answer_submit_date {
+  dimension_group: answer_submit {
     type: time
+    datatype: epoch
     timeframes: [time, date, week, month, day_of_week, hour_of_day]
     sql: ${TABLE}.answerSubmitDate ;;
   }
@@ -17,8 +18,9 @@ view: next_events {
     sql: ${TABLE}.isAnswerCorrect ;;
   }
 
-  dimension_group: page_created_date {
+  dimension_group: page_created {
     type: time
+    datatype: epoch
     timeframes: [time, date, week, month, day_of_week, hour_of_day]
     sql: ${TABLE}.pageCreatedDate ;;
   }
@@ -44,7 +46,7 @@ view: next_events {
   }
 }
 
-view: next_events__question {
+view: questions {
 
   dimension: choices {
     type: string
@@ -53,6 +55,7 @@ view: next_events__question {
 
   dimension_group: date_added {
     type: time
+    datatype: epoch
     timeframes: [time, date, week, month, day_of_week, hour_of_day]
     sql: ${TABLE}.dateAdded ;;
   }
