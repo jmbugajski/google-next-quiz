@@ -6,7 +6,7 @@ view: quiz_events {
     sql: ${TABLE}.userId ;;
   }
 
-  dimension_group: page_created_date {
+  dimension_group: page_created {
     type: time
     timeframes: [time, date, week, month, day_of_week, hour_of_day]
     sql: TIMESTAMP_MILLIS(${TABLE}.pageCreatedDate) ;;
@@ -22,7 +22,7 @@ view: quiz_events {
     sql: ${TABLE}.questionId ;;
   }
 
-  dimension_group: answer_submit_date {
+  dimension_group: answer_submitted {
     type: time
     timeframes: [time, date, week, month, day_of_week, hour_of_day]
     sql: TIMESTAMP_MILLIS(${TABLE}.answerSubmitDate) ;;
