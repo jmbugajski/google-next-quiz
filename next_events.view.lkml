@@ -9,7 +9,7 @@ view: next_events {
   dimension_group: answer_submit_date {
     type: time
     datatype: epoch
-    sql: ${TABLE}.answerSubmitDate ;;
+    sql: ${TABLE}.answerSubmitDate / 1000 ;;
   }
 
   dimension: is_answer_correct {
@@ -17,9 +17,10 @@ view: next_events {
     sql: ${TABLE}.isAnswerCorrect ;;
   }
 
-  dimension: page_created_date {
-    type: number
-    sql: ${TABLE}.pageCreatedDate ;;
+  dimension_group: page_created_date {
+    type: time
+    datatype: epoch
+    sql: ${TABLE}.pageCreatedDate / 1000 ;;
   }
 
   dimension: question_id {
@@ -37,9 +38,10 @@ view: next_events {
     sql: ${TABLE}.question.choices ;;
   }
 
-  dimension: question_date_added {
-    type: number
-    sql: ${TABLE}.question.dateAdded ;;
+  dimension_group: question_date_added {
+    type: time
+    datatype: epoch
+    sql: ${TABLE}.question.dateAdded / 1000 ;;
   }
 
   dimension: question_difficulty {
