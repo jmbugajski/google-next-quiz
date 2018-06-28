@@ -6,8 +6,9 @@ view: next_events {
     sql: ${TABLE}.answer ;;
   }
 
-  dimension: answer_submit_date {
-    type: number
+  dimension_group: answer_submit_date {
+    type: time
+    datatype: epoch
     sql: ${TABLE}.answerSubmitDate ;;
   }
 
