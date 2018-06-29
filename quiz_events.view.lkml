@@ -53,8 +53,7 @@ view: quiz_events {
   }
 }
 
-view: quiz_events__question {
-
+view: question {
   dimension: type {
     type: string
     sql: ${TABLE}.type ;;
@@ -85,5 +84,4 @@ view: quiz_events__question {
     type: string
     sql: ${TABLE}.choices ;;
   }
-
 }
