@@ -55,6 +55,7 @@ view: quiz_events {
 }
 
 view: quiz_events__question {
+  sql_table_name: `mdp-next18.raw.events` ;;
 
   dimension: type {
     type: string
