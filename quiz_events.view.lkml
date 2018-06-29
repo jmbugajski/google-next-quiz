@@ -56,6 +56,12 @@ view: quiz_events {
     type:  count_distinct
     sql:  ${TABLE}.userId ;;
   }
+
+  measure: time_to_answer {
+    type:  number
+    sql:  TIMESTAMP_MILLIS(${TABLE}.answerSubmitDate - ${TABLE}.pageCreatedDate) ;;
+  }
+
 }
 
 view: question {
