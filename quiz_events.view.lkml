@@ -42,6 +42,12 @@ view: quiz_events {
     sql: ${TABLE}.question ;;
   }
 
+  dimension: seconds_to_answer {
+    type:  number
+    sql:  (${TABLE}.answerSubmitDate - ${TABLE}.pageCreatedDate) / 1000 ;;
+    value_format: "0"
+  }
+
   measure: count {
     type: count
     drill_fields: []
@@ -55,12 +61,6 @@ view: quiz_events {
   measure: user_count {
     type:  count_distinct
     sql:  ${TABLE}.userId ;;
-  }
-
-  measure: seconds_to_answer {
-    type:  number
-    sql:  (${TABLE}.answerSubmitDate - ${TABLE}.pageCreatedDate) / 1000 ;;
-    value_format: "0"
   }
 
   measure: questions_answered_by_user {
