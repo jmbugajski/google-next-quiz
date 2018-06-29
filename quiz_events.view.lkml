@@ -62,6 +62,11 @@ view: quiz_events {
     sql:  (${TABLE}.answerSubmitDate - ${TABLE}.pageCreatedDate) / 1000 ;;
     value_format: "0"
   }
+
+  measure: questions_answered_by_user {
+    type: number
+    sql:  COUNT(DISTINCT question_id) GROUP BY question_id ;;
+  }
 }
 
 view: question {
