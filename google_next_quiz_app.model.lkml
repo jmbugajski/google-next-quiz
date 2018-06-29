@@ -13,7 +13,7 @@ explore: quiz_events {
   # Repeated nested Object
   join: quiz_events__question {
     view_label:  "Quiz Events: Questions"
-    sql:  LEFT JOIN UNNEST(question.choices}) as question_choices ;;
+    sql:  LEFT JOIN UNNEST(question.choices) as question_choices ;;
     relationship:  many_to_one
   }
 }
