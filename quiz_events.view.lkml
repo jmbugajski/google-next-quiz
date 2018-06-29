@@ -82,6 +82,6 @@ view: question {
 
   dimension: choices {
     type: string
-    sql: ${TABLE}.choices ;;
+    sql: question_choices ;;
   }
 }
