@@ -23,8 +23,13 @@ view: quiz_events {
 
   dimension_group: answer_submitted {
     type: time
-    timeframes: [time, date, week, month, day_of_week, hour_of_day, raw]
+    timeframes: [time, date, week, month, day_of_week, hour_of_day]
     sql: TIMESTAMP_MILLIS(${TABLE}.answerSubmitDate) ;;
+  }
+
+  dimension: answer_submitted_timestamp {
+    type: number
+    sql: ${TABLE}.answerSubmitDate ;;
   }
 
   dimension: answer {
