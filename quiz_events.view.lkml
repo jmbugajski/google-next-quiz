@@ -59,7 +59,8 @@ view: quiz_events {
 
   measure: seconds_to_answer {
     type:  number
-    sql:  INT(${TABLE}.answerSubmitDate - ${TABLE}.pageCreatedDate) / 1000) ;;
+    sql:  (${TABLE}.answerSubmitDate - ${TABLE}.pageCreatedDate) / 1000 ;;
+    value_format: "0"
   }
 }
 
