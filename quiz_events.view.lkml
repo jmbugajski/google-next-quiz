@@ -65,7 +65,7 @@ view: quiz_events {
 
   measure: questions_answered_by_user {
     type: number
-    sql:  COUNT(DISTINCT question_id) GROUP BY question_id ;;
+    sql:  COUNT(DISTINCT question_id) ;;
   }
 }
 
