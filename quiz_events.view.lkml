@@ -59,7 +59,7 @@ view: quiz_events {
 
   measure: seconds_to_answer {
     type:  number
-    sql:  TIMESTAMP_MILLIS(${TABLE}.answerSubmitDate) - TIMESTAMP_MILLIS(${TABLE}.pageCreatedDate) ;;
+    sql:  (${TABLE}.answerSubmitDate - ${TABLE}.pageCreatedDate) / 1000 ;;
   }
 
 }
