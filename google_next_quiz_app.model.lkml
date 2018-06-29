@@ -10,10 +10,11 @@ datagroup: google_next_quiz_app_default_datagroup {
 persist_with: google_next_quiz_app_default_datagroup
 
 explore: quiz_events {
+  sql_table_name: `mdp-next18.raw.events` ;;
   # Repeated nested Object
   join: quiz_events__question {
     view_label:  "Quiz Events: Questions"
     sql:  LEFT JOIN UNNEST(question.choices) as question_choices ;;
-    relationship:  many_to_one
+    relationship:  one_to_many
   }
 }
