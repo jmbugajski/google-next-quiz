@@ -63,9 +63,9 @@ view: quiz_events {
     sql:  ${TABLE}.userId ;;
   }
 
-  measure: questions_answered_by_user {
+  measure: question_count {
     type: number
-    sql:  COUNT(DISTINCT question_id) ;;
+    sql:  COUNT(DISTINCT ${TABLE}.questionId) ;;
   }
 }
 
