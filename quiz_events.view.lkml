@@ -7,7 +7,7 @@ view: quiz_events {
 
   dimension_group: page_created {
     type: time
-    timeframes: [time, date, week, month, day_of_week, hour_of_day]
+    timeframes: [time, date, week, month, day_of_week, hour_of_day, minute]
     sql: TIMESTAMP_MILLIS(${TABLE}.pageCreatedDate) ;;
   }
 
@@ -23,7 +23,7 @@ view: quiz_events {
 
   dimension_group: answer_submitted {
     type: time
-    timeframes: [time, date, week, month, day_of_week, hour_of_day]
+    timeframes: [time, date, week, month, day_of_week, hour_of_day, minute]
     sql: TIMESTAMP_MILLIS(${TABLE}.answerSubmitDate) ;;
   }
 
@@ -92,7 +92,7 @@ view: question {
 
   dimension_group: date_added {
     type: time
-    timeframes: [time, date, week, month, day_of_week, hour_of_day]
+    timeframes: [time, date, week, month, day_of_week, hour_of_day, minute]
     sql: TIMESTAMP_MILLIS(${TABLE}.dateAdded) ;;
   }
 
